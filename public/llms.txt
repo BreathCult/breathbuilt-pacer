@@ -1,0 +1,51 @@
+# breathcult
+
+> Free guided breathing pacer with 6 science-backed techniques. No app download required. Works on any device.
+
+breathcult is a web-based breathing pacer that guides users through precisely timed breathing exercises. All timings are validated against published research.
+
+## Techniques
+
+### Box Breathing
+- Pattern: Inhale 4s, Hold 4s, Exhale 4s, Hold 4s
+- Duration: ~5 minutes (19 rounds)
+- Used by: Navy SEALs, first responders
+- Best for: Focus, calm, stress management
+
+### 4-7-8 Breathing
+- Pattern: Inhale 4s, Hold 7s, Exhale 8s
+- Duration: ~5 minutes (4 rounds)
+- Developed by: Dr. Andrew Weil
+- Best for: Sleep, anxiety, wind-down
+
+### Physiological Sigh
+- Pattern: Inhale 2s, Sniff 1s, Exhale 6s
+- Duration: ~27 seconds (3 rounds)
+- Research: Stanford University (Huberman Lab)
+- Best for: Instant stress relief, real-time calm
+
+### Resonant Breathing
+- Pattern: Inhale 5.5s, Exhale 5.5s
+- Duration: ~5 minutes (27 rounds)
+- Rate: 5.5 breaths per minute
+- Best for: Heart rate variability, coherence, balance
+
+### Wim Hof Method
+- Pattern: 30 Power Breaths (2.5s each), Hold Empty 60s, Recovery Breath 15s
+- Duration: ~3 rounds
+- Safety: Never practice near water, while driving, or standing. Not for epilepsy, pregnancy, or cardiovascular conditions.
+- Best for: Energy, cold tolerance, immune activation
+
+### Cyclic Sighing
+- Pattern: Inhale 3s, Sniff 1s, Exhale 8s
+- Duration: 5 minutes (25 rounds)
+- Research: Stanford study found it more effective than meditation for mood improvement
+- Best for: Daily mood boost, anxiety reduction
+
+## About
+
+- Creator: Dylon Hernandez (@dylonhernandez)
+- Brand: breathcult
+- Price: Free
+- Platform: Web (no app download needed)
+- URL: https://breathcult.com
