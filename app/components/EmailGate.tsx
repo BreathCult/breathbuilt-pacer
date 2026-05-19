@@ -36,7 +36,7 @@ export default function EmailGate({ onUnlock }: Props) {
         return;
       }
 
-      localStorage.setItem("breathbuilt_unlocked", "true");
+      localStorage.setItem("breathcult_unlocked", "true");
       onUnlock();
     } catch {
       setError("Connection error. Try again.");

@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 
 function getStreak(): { count: number; isNew: boolean } {
   const today = new Date().toISOString().split("T")[0];
-  const lastDate = localStorage.getItem("breathbuilt_last_session");
-  const streak = parseInt(localStorage.getItem("breathbuilt_streak") || "0", 10);
+  const lastDate = localStorage.getItem("breathcult_last_session");
+  const streak = parseInt(localStorage.getItem("breathcult_streak") || "0", 10);
 
   if (lastDate === today) {
     return { count: streak, isNew: false };
@@ -25,8 +25,8 @@ function getStreak(): { count: number; isNew: boolean } {
 
 export function recordSession() {
   const today = new Date().toISOString().split("T")[0];
-  const lastDate = localStorage.getItem("breathbuilt_last_session");
-  const streak = parseInt(localStorage.getItem("breathbuilt_streak") || "0", 10);
+  const lastDate = localStorage.getItem("breathcult_last_session");
+  const streak = parseInt(localStorage.getItem("breathcult_streak") || "0", 10);
 
   if (lastDate === today) return;
 
@@ -35,8 +35,8 @@ export function recordSession() {
   const yesterdayStr = yesterday.toISOString().split("T")[0];
 
   const newStreak = lastDate === yesterdayStr ? streak + 1 : 1;
-  localStorage.setItem("breathbuilt_streak", String(newStreak));
-  localStorage.setItem("breathbuilt_last_session", today);
+  localStorage.setItem("breathcult_streak", String(newStreak));
+  localStorage.setItem("breathcult_last_session", today);
 }
 
 export default function StreakCounter() {

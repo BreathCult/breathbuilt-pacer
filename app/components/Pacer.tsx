@@ -25,7 +25,7 @@ export default function Pacer() {
   const phaseStartRef = useRef(0);
 
   useEffect(() => {
-    if (localStorage.getItem("breathbuilt_unlocked") === "true") {
+    if (localStorage.getItem("breathcult_unlocked") === "true") {
       setState("selecting");
     }
   }, []);

@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
         email,
         reactivate_existing: true,
         send_welcome_email: false,
-        utm_source: "breathbuilt_pacer",
+        utm_source: "breathcult_pacer",
       }),
     }
   );
