@@ -56,8 +56,8 @@ export default function EmailGate({ onUnlock }: Props) {
           breathcult
         </h1>
 
-        <p className="text-sm text-white/50 mt-6 leading-relaxed">
-          For the ones doing it all.
+        <p className="text-sm text-white/50 mt-6 leading-relaxed italic">
+          It&apos;s all about the breath, forget about the rest.
         </p>
 
         <p className="text-sm text-white/30 mt-3 leading-relaxed">

@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "breathcult | Free Breathing Pacer",
     description:
-      "6 science-backed breathing techniques with precise timing. Box breathing, 4-7-8, physiological sigh, Wim Hof, resonant, and cyclic sighing. Free, no app required.",
+      "It's all about the breath, forget about the rest. 6 science-backed breathing techniques with precise timing. Box breathing, 4-7-8, physiological sigh, Wim Hof, resonant, and cyclic sighing. Free, no app required.",
     siteName: "breathcult",
     type: "website",
   },

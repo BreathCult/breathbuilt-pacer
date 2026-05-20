@@ -25,7 +25,10 @@ export default function TechniqueSelector({ techniques, onSelect }: Props) {
           </h1>
           <StreakCounter />
         </div>
-        <p className="text-sm text-white/40 tracking-wide">
+        <p className="text-xs text-white/30 tracking-wide italic">
+          It&apos;s all about the breath, forget about the rest.
+        </p>
+        <p className="text-sm text-white/40 tracking-wide mt-3">
           Pick your breath
         </p>
       </motion.div>
