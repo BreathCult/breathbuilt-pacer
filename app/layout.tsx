@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "breathcult | Align Your Natural Hardware",
     description:
-      "Try breathcult today. Align your natural hardware. 6 science-backed breathing techniques, free, no app required.",
+      "Join breathcult today. Align your natural hardware. 6 science-backed breathing techniques, free, no app required.",
     siteName: "breathcult",
     type: "website",
   },
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "breathcult | Align Your Natural Hardware",
     description:
-      "Try breathcult today. Align your natural hardware. 6 science-backed breathing techniques, free, no app required.",
+      "Join breathcult today. Align your natural hardware. 6 science-backed breathing techniques, free, no app required.",
   },
   alternates: {
     canonical: "https://breathcult.com",

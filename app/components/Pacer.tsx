@@ -232,12 +232,12 @@ export default function Pacer() {
                 border: `1px solid ${technique.color}40`,
               }}
             >
-              Breathe again
+              Another session
             </button>
             <button
               onClick={async () => {
                 const url = window.location.origin;
-                const text = `Try breathcult today. Align your natural hardware. Free breathing pacer, no app needed.`;
+                const text = `Join breathcult today. Align your natural hardware. Free breathing pacer, no app needed.`;
                 if (navigator.share) {
                   try {
                     await navigator.share({ title: "breathcult", text, url });
