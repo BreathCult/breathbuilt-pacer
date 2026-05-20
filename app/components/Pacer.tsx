@@ -57,6 +57,16 @@ export default function Pacer() {
     setTotalElapsed(0);
   }, []);
 
+  const handleRestart = useCallback(() => {
+    cancelAnimationFrame(rafRef.current);
+    setPhaseIndex(0);
+    setRound(1);
+    setCountdown(0);
+    setTotalElapsed(0);
+    setState("countdown");
+    setStartCountdown(3);
+  }, []);
+
   // Pre-session 3-2-1 countdown
   useEffect(() => {
     if (state !== "countdown") return;
@@ -210,9 +220,19 @@ export default function Pacer() {
           <div className="flex gap-3 mt-10">
             <button
               onClick={handleStop}
-              className="px-6 py-3 rounded-full text-sm font-medium text-white/80 border border-white/15 active:scale-95 transition-all hover:bg-white/[0.06]"
+              className="px-5 py-3 rounded-full text-sm font-medium text-white/60 border border-white/10 active:scale-95 transition-all hover:bg-white/[0.06]"
             >
-              Try another
+              Home
+            </button>
+            <button
+              onClick={handleRestart}
+              className="px-5 py-3 rounded-full text-sm font-medium text-white/90 active:scale-95 transition-all"
+              style={{
+                background: `${technique.color}20`,
+                border: `1px solid ${technique.color}40`,
+              }}
+            >
+              Breathe again
             </button>
             <button
               onClick={async () => {
@@ -232,11 +252,7 @@ export default function Pacer() {
                 }
               }}
               id="share-btn"
-              className="px-6 py-3 rounded-full text-sm font-medium text-white/90 active:scale-95 transition-all"
-              style={{
-                background: `${technique.color}20`,
-                border: `1px solid ${technique.color}40`,
-              }}
+              className="px-5 py-3 rounded-full text-sm font-medium text-white/60 border border-white/10 active:scale-95 transition-all hover:bg-white/[0.06]"
             >
               Share
             </button>
