@@ -217,7 +217,7 @@ export default function Pacer() {
             <button
               onClick={async () => {
                 const url = window.location.origin;
-                const text = `Just finished ${technique.name} on breathcult. Free breathing pacer, no app needed.`;
+                const text = `Try breathcult today. Align your natural hardware. Free breathing pacer, no app needed.`;
                 if (navigator.share) {
                   try {
                     await navigator.share({ title: "breathcult", text, url });

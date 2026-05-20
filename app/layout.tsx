@@ -33,17 +33,17 @@ export const metadata: Metadata = {
     "sleep breathing technique",
   ],
   openGraph: {
-    title: "breathcult | Free Breathing Pacer",
+    title: "breathcult | Align Your Natural Hardware",
     description:
-      "It's all about the breath, forget about the rest. 6 science-backed breathing techniques with precise timing. Box breathing, 4-7-8, physiological sigh, Wim Hof, resonant, and cyclic sighing. Free, no app required.",
+      "Try breathcult today. Align your natural hardware. 6 science-backed breathing techniques, free, no app required.",
     siteName: "breathcult",
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: "breathcult | Free Breathing Pacer",
+    title: "breathcult | Align Your Natural Hardware",
     description:
-      "6 science-backed breathing techniques with precise timing. Free, no app required.",
+      "Try breathcult today. Align your natural hardware. 6 science-backed breathing techniques, free, no app required.",
   },
   alternates: {
     canonical: "https://breathcult.com",
