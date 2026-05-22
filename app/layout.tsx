@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "breathcult | Free Breathing Pacer - Box Breathing, 4-7-8, Wim Hof & More",
+  title: "breathCult | Free Breathing Pacer - Box Breathing, 4-7-8, Wim Hof & More",
   description:
     "Free guided breathing exercises with precise timing. 6 science-backed techniques: box breathing, 4-7-8, physiological sigh, Wim Hof method, resonant breathing, and cyclic sighing. No app download required. Works on any device.",
   keywords: [
@@ -33,17 +33,17 @@ export const metadata: Metadata = {
     "sleep breathing technique",
   ],
   openGraph: {
-    title: "breathcult | Align Your Natural Hardware",
+    title: "breathCult | Align Your Natural Hardware",
     description:
-      "Join breathcult today. Align your natural hardware. 6 science-backed breathing techniques, free, no app required.",
-    siteName: "breathcult",
+      "Join breathCult today. Align your natural hardware. 6 science-backed breathing techniques, free, no app required.",
+    siteName: "breathCult",
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: "breathcult | Align Your Natural Hardware",
+    title: "breathCult | Align Your Natural Hardware",
     description:
-      "Join breathcult today. Align your natural hardware. 6 science-backed breathing techniques, free, no app required.",
+      "Join breathCult today. Align your natural hardware. 6 science-backed breathing techniques, free, no app required.",
   },
   alternates: {
     canonical: "https://breathcult.com",
@@ -61,7 +61,7 @@ export const viewport: Viewport = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  name: "breathcult",
+  name: "breathCult",
   url: "https://breathcult.com",
   description:
     "Free guided breathing pacer with 6 science-backed techniques: box breathing, 4-7-8, physiological sigh, Wim Hof method, resonant breathing, and cyclic sighing.",

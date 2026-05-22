@@ -21,7 +21,7 @@ export default function TechniqueSelector({ techniques, onSelect }: Props) {
       >
         <div className="flex items-center justify-center gap-3 mb-2">
           <h1 className="text-3xl font-light tracking-tight text-white">
-            breathcult
+            breathCult
           </h1>
           <StreakCounter />
         </div>
@@ -71,12 +71,12 @@ export default function TechniqueSelector({ techniques, onSelect }: Props) {
         </p>
         <div className="mt-4 flex flex-col items-center gap-1">
           <a
-            href="https://instagram.com/breathcultofficial"
+            href="https://instagram.com/thebreathcult"
             target="_blank"
             rel="noopener noreferrer"
             className="text-xs text-white/30 hover:text-white/50 transition-colors"
           >
-            @breathcult
+            @thebreathcult
           </a>
           <a
             href="https://instagram.com/dylonhernandez"

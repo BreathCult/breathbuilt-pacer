@@ -9,6 +9,7 @@ import EmailGate from "./EmailGate";
 import BreathCoach from "./BreathCoach";
 import GuidePanel from "./GuidePanel";
 import { recordSession } from "./StreakCounter";
+import FeedbackModal from "./FeedbackModal";
 
 type SessionState = "gated" | "selecting" | "warning" | "countdown" | "active" | "done";
 
@@ -20,6 +21,7 @@ export default function Pacer() {
   const [countdown, setCountdown] = useState(0);
   const [startCountdown, setStartCountdown] = useState(3);
   const [totalElapsed, setTotalElapsed] = useState(0);
+  const [showFeedback, setShowFeedback] = useState(false);
   const rafRef = useRef<number>(0);
   const startTimeRef = useRef(0);
   const phaseStartRef = useRef(0);
@@ -237,10 +239,10 @@ export default function Pacer() {
             <button
               onClick={async () => {
                 const url = window.location.origin;
-                const text = `Join breathcult today. Align your natural hardware. Free breathing pacer, no app needed.`;
+                const text = `Join breathCult today. Align your natural hardware. Free breathing pacer, no app needed.`;
                 if (navigator.share) {
                   try {
-                    await navigator.share({ title: "breathcult", text, url });
+                    await navigator.share({ title: "breathCult", text, url });
                   } catch {}
                 } else {
                   await navigator.clipboard.writeText(`${text} ${url}`);
@@ -257,6 +259,19 @@ export default function Pacer() {
               Share
             </button>
           </div>
+          <button
+            onClick={() => setShowFeedback(true)}
+            className="mt-4 text-xs text-white/20 hover:text-white/40 transition-colors"
+          >
+            Share feedback or request a feature
+          </button>
+          {showFeedback && (
+            <FeedbackModal
+              technique={technique.name}
+              color={technique.color}
+              onClose={() => setShowFeedback(false)}
+            />
+          )}
         </motion.div>
       </div>
     );
