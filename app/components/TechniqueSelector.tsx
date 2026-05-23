@@ -55,6 +55,7 @@ export default function TechniqueSelector({ techniques, onSelect }: Props) {
             />
             <p className="text-sm font-medium text-white/90">{t.name}</p>
             <p className="text-xs text-white/45 mt-1">{t.tagline}</p>
+            <p className="text-[10px] text-white/25 mt-1.5 leading-relaxed">{t.description}</p>
           </motion.button>
         ))}
       </div>

@@ -7,6 +7,7 @@ const techniques = [
   {
     name: "Box Breathing",
     color: "#3b82f6",
+    description: "Used by Navy SEALs. Equal parts inhale, hold, exhale, hold.",
     pattern: "4s in, 4s hold, 4s out, 4s hold",
     duration: "~5 min",
     bestFor: "Focus, pre-performance, stress",
@@ -14,6 +15,7 @@ const techniques = [
   {
     name: "4-7-8",
     color: "#8b5cf6",
+    description: "Dr. Andrew Weil's technique. The natural tranquilizer.",
     pattern: "4s in, 7s hold, 8s out",
     duration: "~1 min",
     bestFor: "Sleep, acute anxiety",
@@ -21,6 +23,7 @@ const techniques = [
   {
     name: "Physiological Sigh",
     color: "#10b981",
+    description: "Stanford-studied. One breath can change your state.",
     pattern: "2s in, 1s sniff, 6s out",
     duration: "~30 sec",
     bestFor: "Emergency reset, one breath",
@@ -28,6 +31,7 @@ const techniques = [
   {
     name: "Resonant",
     color: "#f59e0b",
+    description: "5.5 breaths/min. Where your systems sync up.",
     pattern: "5.5s in, 5.5s out",
     duration: "5-20 min",
     bestFor: "HRV training, daily practice",
@@ -35,6 +39,7 @@ const techniques = [
   {
     name: "Wim Hof",
     color: "#ef4444",
+    description: "Controlled hyperventilation + hold. Morning activation only.",
     pattern: "30 breaths + hold + recovery",
     duration: "~7.5 min",
     bestFor: "Morning energy, activation",
@@ -42,6 +47,7 @@ const techniques = [
   {
     name: "Cyclic Sighing",
     color: "#06b6d4",
+    description: "Beat meditation in a Stanford trial. 5 min/day.",
     pattern: "3s in, 1s sniff, 8s out",
     duration: "5 min",
     bestFor: "Daily mood boost",
@@ -111,6 +117,7 @@ export default function GuidePanel() {
                         />
                         <p className="text-sm font-medium text-white/85">{t.name}</p>
                       </div>
+                      <p className="text-[11px] text-white/35 mb-1.5">{t.description}</p>
                       <p className="text-xs text-white/40 mb-1">{t.pattern}</p>
                       <div className="flex gap-3">
                         <p className="text-[11px] text-white/25">{t.duration}</p>
@@ -121,8 +128,8 @@ export default function GuidePanel() {
                 </div>
 
                 <a
-                  href="/breathcult-guide.pdf"
-                  download="breathcult-guide.pdf"
+                  href="/breathcult-guide-v2.pdf"
+                  download="breathcult-guide-v2.pdf"
                   className="mt-6 w-full py-3 rounded-xl bg-white/[0.06] border border-white/[0.1] text-white/60 text-sm font-medium flex items-center justify-center gap-2 hover:bg-white/[0.1] transition-colors active:scale-[0.98]"
                 >
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
