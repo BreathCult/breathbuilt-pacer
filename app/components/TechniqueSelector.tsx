@@ -5,6 +5,13 @@ import { Technique } from "../techniques";
 import DidYouKnow from "./DidYouKnow";
 import StreakCounter from "./StreakCounter";
 
+function formatDuration(t: Technique): string {
+  const totalSeconds = t.phases.reduce((sum, p) => sum + p.duration, 0) * t.rounds;
+  const mins = Math.round(totalSeconds / 60);
+  if (mins < 1) return `${Math.round(totalSeconds)}s`;
+  return `${mins} min`;
+}
+
 type Props = {
   techniques: Technique[];
   onSelect: (technique: Technique) => void;
@@ -56,6 +63,7 @@ export default function TechniqueSelector({ techniques, onSelect }: Props) {
             <p className="text-sm font-medium text-white/90">{t.name}</p>
             <p className="text-xs text-white/45 mt-1">{t.tagline}</p>
             <p className="text-[10px] text-white/25 mt-1.5 leading-relaxed">{t.description}</p>
+            <p className="text-[10px] text-white/20 mt-1.5">{formatDuration(t)}</p>
           </motion.button>
         ))}
       </div>

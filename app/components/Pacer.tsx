@@ -22,6 +22,8 @@ export default function Pacer() {
   const [startCountdown, setStartCountdown] = useState(3);
   const [totalElapsed, setTotalElapsed] = useState(0);
   const [showFeedback, setShowFeedback] = useState(false);
+  const [showFeelingPicker, setShowFeelingPicker] = useState(false);
+  const feelings = ["Calm", "Focused", "Energized", "Reset"];
   const rafRef = useRef<number>(0);
   const startTimeRef = useRef(0);
   const phaseStartRef = useRef(0);
@@ -237,27 +239,54 @@ export default function Pacer() {
               Another session
             </button>
             <button
-              onClick={async () => {
-                const url = window.location.origin;
-                const text = `Join breathCult today. Align your natural hardware. Free breathing pacer, no app needed.`;
-                if (navigator.share) {
-                  try {
-                    await navigator.share({ title: "breathCult", text, url });
-                  } catch {}
-                } else {
-                  await navigator.clipboard.writeText(`${text} ${url}`);
-                  const btn = document.getElementById("share-btn");
-                  if (btn) btn.textContent = "Copied!";
-                  setTimeout(() => {
-                    if (btn) btn.textContent = "Share";
-                  }, 2000);
-                }
-              }}
+              onClick={() => setShowFeelingPicker(true)}
               id="share-btn"
               className="px-5 py-3 rounded-full text-sm font-medium text-white/60 border border-white/10 active:scale-95 transition-all hover:bg-white/[0.06]"
             >
               Share
             </button>
+          </div>
+          <AnimatePresence>
+            {showFeelingPicker && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                transition={{ duration: 0.2 }}
+                className="mt-6"
+              >
+                <p className="text-xs text-white/40 mb-3">How are you feeling?</p>
+                <div className="flex gap-2">
+                  {feelings.map((feeling) => (
+                    <button
+                      key={feeling}
+                      onClick={async () => {
+                        const url = window.location.origin;
+                        const mins = Math.round(totalDuration / 60);
+                        const timeStr = mins < 1 ? `${Math.round(totalDuration)}s` : `${mins} min`;
+                        const text = `Just finished ${technique.rounds} rounds of ${technique.name} for ${timeStr} on breathCult. Feeling ${feeling.toLowerCase()}. Free breathing pacer, no app needed.`;
+                        if (navigator.share) {
+                          try {
+                            await navigator.share({ title: "breathCult", text, url });
+                          } catch {}
+                        } else {
+                          await navigator.clipboard.writeText(`${text} ${url}`);
+                        }
+                        setShowFeelingPicker(false);
+                      }}
+                      className="px-3 py-1.5 rounded-full text-xs font-medium text-white/70 active:scale-95 transition-all"
+                      style={{
+                        background: `${technique.color}15`,
+                        border: `1px solid ${technique.color}30`,
+                      }}
+                    >
+                      {feeling}
+                    </button>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
           </div>
           <button
             onClick={() => setShowFeedback(true)}
