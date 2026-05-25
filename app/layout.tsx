@@ -162,7 +162,40 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <div className="sr-only" aria-hidden="false" suppressHydrationWarning>
+          <h1>breathCult - Free Breathing Pacer</h1>
+          <p>Free guided breathing exercises with precise timing. 6 science-backed techniques. No app download required. Works on any device.</p>
+          <h2>Breathing Techniques</h2>
+          <article>
+            <h3>Box Breathing</h3>
+            <p>Used by Navy SEALs. Equal parts inhale, hold, exhale, hold. Pattern: Inhale 4s, Hold 4s, Exhale 4s, Hold 4s. Duration: 5 minutes. Best for focus, calm, and stress management.</p>
+          </article>
+          <article>
+            <h3>4-7-8 Breathing</h3>
+            <p>Dr. Andrew Weil's technique. The natural tranquilizer. Pattern: Inhale 4s, Hold 7s, Exhale 8s. Duration: 1 minute. Best for sleep and anxiety.</p>
+          </article>
+          <article>
+            <h3>Physiological Sigh</h3>
+            <p>Stanford-studied. One breath can change your state. Pattern: Inhale 2s, Sniff 1s, Exhale 6s. Duration: 27 seconds. Best for instant stress relief.</p>
+          </article>
+          <article>
+            <h3>Resonant Breathing</h3>
+            <p>5.5 breaths per minute. Where your systems sync up. Pattern: Inhale 5.5s, Exhale 5.5s. Duration: 5 minutes. Best for heart rate variability and coherence.</p>
+          </article>
+          <article>
+            <h3>Wim Hof Method</h3>
+            <p>Controlled hyperventilation plus breath holds. Morning activation only. Pattern: 30 Power Breaths, Hold Empty 60s, Recovery Breath 15s. Duration: 7.5 minutes. Best for energy and activation. Safety: Never practice near water, while driving, or standing.</p>
+          </article>
+          <article>
+            <h3>Cyclic Sighing</h3>
+            <p>Beat meditation in a Stanford trial. 5 minutes per day. Pattern: Inhale 3s, Sniff 1s, Exhale 8s. Duration: 5 minutes. Best for daily mood boost.</p>
+          </article>
+          <h2>About breathCult</h2>
+          <p>breathCult is a free web-based breathing pacer created by Dylon Hernandez. No app download needed. Open it on any device, pick a science-backed breathing protocol, and start breathing. All techniques are validated against published research from Stanford University, the U.S. military, and peer-reviewed journals.</p>
+        </div>
+      </body>
     </html>
   );
 }
