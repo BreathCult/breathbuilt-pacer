@@ -8,6 +8,7 @@ import BreathingCircle from "./BreathingCircle";
 import EmailGate from "./EmailGate";
 import BreathCoach from "./BreathCoach";
 import GuidePanel from "./GuidePanel";
+import Aurora from "./Aurora";
 import { recordSession } from "./StreakCounter";
 import FeedbackModal from "./FeedbackModal";
 
@@ -287,7 +288,6 @@ export default function Pacer() {
               </motion.div>
             )}
           </AnimatePresence>
-          </div>
           <button
             onClick={() => setShowFeedback(true)}
             className="mt-4 text-xs text-white/20 hover:text-white/40 transition-colors"
@@ -363,8 +363,23 @@ export default function Pacer() {
     );
   }
 
+  // Ambient aurora on menu screens only — never during the breathing session,
+  // so the breathing circle stays the sole focus.
+  const isMenu = state === "selecting" || state === "warning" || state === "done";
+
   return (
     <>
+      {isMenu && (
+        <motion.div
+          aria-hidden
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.5 }}
+          transition={{ duration: 1.2 }}
+          className="fixed inset-0 -z-10 pointer-events-none"
+        >
+          <Aurora colorStops={["#0a0a0a", "#3b82f6", "#1e3a8a"]} amplitude={0.7} blend={0.5} speed={0.4} />
+        </motion.div>
+      )}
       {content}
       <GuidePanel />
       <BreathCoach {...coachProps} />
