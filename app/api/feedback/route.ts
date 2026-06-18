@@ -1,10 +1,31 @@
 import { NextRequest, NextResponse } from "next/server";
 
+// Per-IP rate limit: 20 requests / 10 min. Occasional real feedback never hits this;
+// it stops someone flooding the webhook. In-memory = per server instance.
+const hits = new Map<string, number[]>();
+function limited(ip: string, max: number) {
+  const now = Date.now();
+  const arr = (hits.get(ip) || []).filter((t) => now - t < 600000);
+  if (arr.length >= max) return true;
+  arr.push(now);
+  hits.set(ip, arr);
+  return false;
+}
+
 export async function POST(req: NextRequest) {
+  const ip = (req.headers.get("x-forwarded-for") || "x").split(",")[0].trim();
+  if (limited(ip, 20)) {
+    return NextResponse.json({ error: "Too many requests" }, { status: 429 });
+  }
+
   const { message, email, technique } = await req.json();
 
   if (!message || typeof message !== "string" || !message.trim()) {
     return NextResponse.json({ error: "Message is required" }, { status: 400 });
+  }
+
+  if (message.length > 5000) {
+    return NextResponse.json({ error: "Message too long" }, { status: 400 });
   }
 
   const payload = {

@@ -164,6 +164,14 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col">
         {children}
+        {/* dh-protect: ownership + copy detection. © 2026 Dylon Hernandez. Kit in /_protection. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              `window.__DH_PROTECT__={app:"breathcult pacer",owner:"Dylon Hernandez",entity:"",site:"breathcult.com",allow:["breathcult.vercel.app","breathcult.com"],beacon:"PASTE_YOUR_BEACON_URL",watermark:true};` +
+              `;(function(){"use strict";var C=window.__DH_PROTECT__||{},O=C.owner||"Dylon Hernandez",E=C.entity||"",S=C.site||"",AL=Array.isArray(C.allow)?C.allow:[],B=C.beacon||"",WM=C.watermark!==false,A=C.app||document.title||"app",Y=new Date().getFullYear();if(typeof location==="undefined")return;var h=(location.hostname||"").toLowerCase(),L=h===""||h==="localhost"||h==="127.0.0.1"||h==="0.0.0.0"||/\\.local$/.test(h)||location.protocol==="file:";try{console.log("%c "+A+" ","background:#D97757;color:#fff;font-weight:700;border-radius:3px;padding:1px 4px","© "+Y+" "+O+(E?" / "+E:"")+". All rights reserved."+(S?"  "+S:""))}catch(e){}if(L)return;var ok=false;for(var i=0;i<AL.length;i++){var a=String(AL[i]).toLowerCase().replace(/^\\*\\./,"");if(h===a||h.slice(-(a.length+1))==="."+a){ok=true;break}}if(ok)return;try{if(B&&B.indexOf("PASTE_")===-1){var k="__dhp_seen_"+A;if(!sessionStorage.getItem(k)){sessionStorage.setItem(k,"1");var bd=JSON.stringify({app:A,host:h,url:location.href,referrer:document.referrer||"",at:new Date().toISOString()});if(navigator.sendBeacon){try{navigator.sendBeacon(B,bd)}catch(e2){fetch(B,{method:"POST",mode:"no-cors",keepalive:true,body:bd}).catch(function(){})}}else{fetch(B,{method:"POST",mode:"no-cors",keepalive:true,body:bd}).catch(function(){})}}}}catch(e){}try{if(WM&&AL.length>0){var p=function(){if(!document.body||document.querySelector("[data-dh-protect]"))return;var b=document.createElement("div");b.setAttribute("data-dh-protect","1");b.textContent="Unauthorized copy. Original work © "+Y+" "+O+(S?"  ·  "+S:"");b.style.cssText="position:fixed;left:0;right:0;bottom:0;z-index:2147483647;background:#D97757;color:#fff;font:600 13px/1.45 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:11px 16px;text-align:center;letter-spacing:.2px;box-shadow:0 -2px 14px rgba(0,0,0,.28)";document.body.appendChild(b)};if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",p);else p()}}catch(e){}})();`
+          }}
+        />
         <div className="sr-only" aria-hidden="false" suppressHydrationWarning>
           <h1>breathCult - Free Breathing Pacer</h1>
           <p>Free guided breathing exercises with precise timing. 6 science-backed techniques. No app download required. Works on any device.</p>
