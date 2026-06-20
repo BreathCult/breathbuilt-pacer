@@ -161,6 +161,13 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
+        {/* Cloudflare Web Analytics (privacy-friendly, no cookies). One-time: paste token. See Web_Design_Business/ANALYTICS_SETUP.md */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              `(function(){var T="PASTE_CF_TOKEN__pacer";if(!T||T.indexOf("PASTE")===0)return;var s=document.createElement("script");s.defer=true;s.src="https://static.cloudflareinsights.com/beacon.min.js";s.setAttribute("data-cf-beacon",JSON.stringify({token:T}));document.head.appendChild(s);})();`,
+          }}
+        />
       </head>
       <body className="min-h-full flex flex-col">
         {children}
